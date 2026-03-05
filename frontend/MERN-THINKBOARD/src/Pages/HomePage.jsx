@@ -38,7 +38,7 @@ export const HomePage = () => {
               <div className="card w-96 bg-base-300 card-xl shadow-sm">
                 <div className="card-body">
                   <h2 className="card-title">{note.title}</h2>
-                  <p>{note.content}</p>
+                  <p className="break-words">{note.content}</p>
                   <div className="justify-end card-actions">
                     <button
                       className="btn btn-secondary"
