@@ -8,6 +8,13 @@ export const HomePage = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
+  const alertClasses = {
+    success: "alert-success",
+    error: "alert-error",
+    warning: "alert-warning",
+    info: "alert-info",
+  };
+
   const showToast = (message, type) => {
     setToast({ message, type });
     setTimeout(() => setToast(null), 3000);
@@ -69,8 +76,10 @@ export const HomePage = () => {
   return (
     <>
       {toast && (
-        <div role="alert" className={`alert alert-${toast.type}`}>
-          <span>{toast.message}</span>
+        <div className="toast toast-top toast-center">
+          <div className={`alert ${alertClasses[toast.type]}`}>
+            <span>{toast.message}</span>
+          </div>
         </div>
       )}
       <div className="flex flex-wrap gap-4 justify-center py-1 my-1">
@@ -105,7 +114,10 @@ export const HomePage = () => {
         ) : (
           notes.map((note) => {
             return (
-              <div className="card card-border w-96 bg-base-300 card-xl shadow-sm">
+              <div
+                key={note._id}
+                className="card card-border w-96 bg-base-300 card-xl shadow-sm"
+              >
                 <div className="card-body">
                   <h2 className="card-title">{note.title}</h2>
                   <p className="break-words">{note.content}</p>
