@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, NavLink } from "react-router";
 import { ThemeToggle } from "../Theme/ThemeToggle";
 import { Plus } from "lucide-react";
@@ -18,12 +17,6 @@ export const Navbar = () => {
             className="input input-bordered w-24 md:w-auto"
           />
           <ThemeToggle />
-          <div className="navbar-end">
-            <NavLink to="/create" className="btn items-center">
-              <span>New Note</span>
-              <Plus className="size-4 stroke-3" />
-            </NavLink>
-          </div>
           <div className="dropdown dropdown-end">
             <div
               tabIndex={0}
